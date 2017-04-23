@@ -1,0 +1,21 @@
+{
+  "name": "angular-citius",
+  "description": "citius project",
+  "main": "",
+  "authors": [
+    "Yagouus <yagofontenla95@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Yagouus/Citius",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "chart.js": "^2.5.0"
+  }
+}

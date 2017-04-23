@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="project"  ng-controller="indexCtrl" lang="en">
+<head>
+
+    <base href="">
+    <meta charset="UTF-8">
+    <title>CITiUS</title>
+
+    <!--Compiled and minified AngularJS-->
+    <script src="vendor/angular.min.js"></script>
+    <script src="vendor/ng-file-upload.min.js"></script>
+    <script src="vendor/angular-route.js"></script>
+
+    <!--App-->
+    <script src="scripts/app.js"></script>
+
+    <!--Controllers-->
+    <script src="scripts/controllers/indexCtrl.js"></script>
+    <script src="scripts/controllers/uploadCtrl.js"></script>
+    <script src="scripts/controllers/processCtrl.js"></script>
+    <!--Services-->
+    <script src="scripts/services/postService.js"></script>
+    <script src="scripts/services/restService.js"></script>
+
+    <!--Directives-->
+    <script src="scripts/directives/fileModel.js"></script>
+
+    <!--Foundation
+    <script src="vendor/what-input.js"></script>
+    <script src="vendor/foundation.min.js"></script>-->
+
+    <!--Materialize-->
+    <script src="vendor/jquery.js"></script>
+    <script src="vendor/materialize.js"></script>
+
+
+    <!--Charts.js
+    <script src="vendor/Chart.bundle.js"></script>
+    <script src="vendor/utils.js"></script>-->
+
+    <!--Styles
+    <link rel="stylesheet" href="styles/app.css"/>
+    <link rel="stylesheet" href="styles/foundation.css"/>
+    <link rel="stylesheet" href="styles/normalize.css"/>
+    <link rel="stylesheet" href="styles/pizza.css"/>-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles/materialize.css">
+    <link rel="stylesheet" href="styles/app.css">
+    <link rel="stylesheet" href="styles/spinner.css">
+
+    <!--Sweet alerts-->
+    <script src="node_modules/sweetalert2/dist/sweetalert2.js"></script>
+    <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.css">
+
+    <!--Angular Spinners-->
+    <script src="node_modules/angular-spinners/dist/angular-spinners.js"></script>
+
+</head>
+<body>
+
+
+
+<!--Body-->
+<div ng-view class="main"></div>
+
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<div class="row">
+
+    <!--Main div-->
+    <div class="col s10">
+        <br>
+        <div class="container">
+            <h4><strong> File: </strong> {{file}} </h4>
+
+            <!--Show
+            <button ng-click="processShow = !processShow" class="btn waves-effect">Process Logs</button>
+            <a ng-repeat="file in files" href="{{file}}">{{file}}</a>-->
+
+
+            <!--Add hierarchy row-->
+            <div class="row">
+                <br>
+                <form class="col s12" method="POST" enctype="multipart/form-data">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title">New hierarchy</span>
+                            <div class="row">
+                                <div class="col s12">
+                                    <button class="btn waves-effect waves-light" ng-click="addHierarchy()" type="submit"
+                                            name="action"><i class="material-icons left">add</i>
+                                        New hierarchy
+                                    </button>
+                                    <button class="grey btn waves-effect waves-light" ng-click="resetData()" type="submit"
+                                            name="action"><i class="material-icons left">delete</i>
+                                        Delete
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!--Select column row-->
+
+            <div class="row">
+                <div>
+
+                    <table class="bordered col s3" ng-repeat="(key, value) in columns">
+                        <thead>
+                        <tr>
+                            <th>{{key}}</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr ng-repeat="data in value">
+                            <td>
+                                <input type="checkbox" id="{{data}}" value="{{data}}" ng-click="selectFunc(key, data)" ng-checked="selectionContains(key,data) > -1"/>
+                                <label for="{{data}}">{{data}}</label>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!--Logs sidebar-->
+    <div class="col s2 grey lighten-3  sideright">
+
+        <!--Logs-->
+        <div class="row">
+            <div class="col s12">
+                <table class="bordered">
+                    <thead>
+                    <tr>
+                        <th>Hierarchys</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="filter in createdFilters" ng-click="getHierarchy(filter.id)">
+                        <td>Filter n{{filter.id + 1}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!--Process-->
+        <div class="row">
+            <div class="col s12">
+                <button class="btn waves-effect">Process</button>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
