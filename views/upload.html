@@ -5,21 +5,29 @@
         <!--Logo-->
         <div class="row">
             <div class="col center s12">
-                <img src="img/logoProDiGen.png">
+                <h1>SenSiMet</h1>
             </div>
         </div>
 
         <!--Buttons-->
-        <div class="center valign">
+        <div class="valign">
             <div class="row" id="uploadButtons">
-                <div class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="s1" type="text" ng-model="s1">
+                        <label for="s1">Sentence 1</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="s2" type="text" ng-model="s2">
+                        <label for="s2">Sentence 2</label>
+                    </div>
+                </div>
+                <div class="col s12 center">
                     <button class="btn-large waves-effect waves-light orange accent-4" data-target="selectModal"
-                            ng-click="getFiles()">
-                        Select
-                        from existing files
+                            ng-click="submitSentences()">
+                        Process
                     </button>
                     <a class="btn-large waves-effect waves-light grey" data-target="uploadModal"> Upload new file </a>
-
                 </div>
             </div>
         </div>

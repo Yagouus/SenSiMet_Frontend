@@ -71,16 +71,16 @@ angular.module("project").controller("uploadCtrl", ["$scope", "$http", "$locatio
     };
 
     //Posts headers to server
-    $scope.postHeaders = function () {
+    $scope.submitSentences = function () {
 
         //Show spinner //Hide title //Close modal
         spinnerService.show('processSpinner');
         $scope.processing = true;
         $('#filterModal').modal('close');
 
-        var uploadUrl = 'http://localhost:8080/filterLog' + "?file=" + $scope.File;
+        var uploadUrl = 'http://localhost:8080/Process';
 
-        postService.postData(uploadUrl, $scope.selectedHeaders)
+        postService.postData(uploadUrl, $scope.s1, $scope.s2)
             .then(function success(response) {
                 restService.uniques = response.data;
                 restService.file = $scope.File;

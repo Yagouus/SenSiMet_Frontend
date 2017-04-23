@@ -15,12 +15,7 @@ angular.module("project").service("postService", ["$http", function($http){
         return $http.post(uploadUrl, fd, config)
     };
 
-    this.postData = function(uploadUrl, data){
-
-        var parameters = JSON.stringify({columns:data});
-        var params = {'columns': data};
-
-        var greet = {"content": "Yago", "age": "21"};
+    this.postData = function(uploadUrl, s1, s2){
 
         var config = {
             headers : {
@@ -30,7 +25,8 @@ angular.module("project").service("postService", ["$http", function($http){
         };
 
         var fd = new FormData();
-        fd.append('data', data);
+        fd.append('s1', s1);
+        fd.append('s2', s2);
 
         return $http.post(uploadUrl, fd, config)
     };
