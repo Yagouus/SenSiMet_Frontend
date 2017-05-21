@@ -14,7 +14,6 @@ angular.module("project").controller("uploadCtrl", ["$scope", "$http", "$locatio
     });
     $scope.loading = false;
 
-
     //Posts file to server
     $scope.submit = function () {
 
@@ -45,8 +44,7 @@ angular.module("project").controller("uploadCtrl", ["$scope", "$http", "$locatio
         });
     };
 
-    //Gets all files from se
-    // rver
+    //Gets all files from server
     $scope.getFiles = function () {
         restService.get("http://localhost:8080/", "archivos")
             .then(function (response) {
@@ -54,39 +52,10 @@ angular.module("project").controller("uploadCtrl", ["$scope", "$http", "$locatio
             });
     };
 
-    //Gets headers from the file choosed
-    $scope.getHeaders = function (File) {
-        $scope.File = File;
-        restService.get("http://localhost:8080/", "headers?file=" + File)
-            .then(function (response) {
-                $scope.headers = response.data;
-                //Close modal
-                $('#selectModal').modal('close');
-
-            });
-    };
-
-    //Adds or removes header by selection
-    $scope.selectedHeaders = [];
-    $scope.selectFunc = function (header) {
-        var i = $scope.selectedHeaders.indexOf(header);
-
-        // Is currently selected
-        if (i > -1) {
-            $scope.selectedHeaders.splice(i, 1);
-        }
-
-        // Is newly selected
-        else {
-            $scope.selectedHeaders.push(header);
-        }
-    };
-
     //Posts headers to server
     $scope.submitSentences = function () {
 
         //Show spinner //Hide title //Close modal
-        spinnerService.show('processSpinner');
         $scope.processing = true;
         $('#filterModal').modal('close');
 
@@ -100,10 +69,8 @@ angular.module("project").controller("uploadCtrl", ["$scope", "$http", "$locatio
             }, function error(response) {
                 swal('Dang!', 'An error ocurred :(', 'error');
             }).finally(function () {
-
-            //Close modal
             spinnerService.hide('processSpinner');
-
+            $scope.processing = false;
         });
     };
 

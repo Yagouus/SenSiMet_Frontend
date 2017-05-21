@@ -30,10 +30,6 @@
         </nav>
     </div>
 
-
-
-
-
     <!--Parallax image-->
     <div class="parallax "><img src="img/lib4.jpg"></div>
 
@@ -122,7 +118,7 @@
 
     <div class="modal-content">
         <h5>Upload new file</h5>
-        <div class="row" ng-hide="loading">
+        <div class="row" ng-hide="processing">
             <div class="row">
                 <div class="input-field col s12">
                     <input id="s1" type="text" ng-model="s1">
@@ -136,18 +132,18 @@
         </div>
 
         <!--Spinner-->
-        <div class="row">
+        <div class="row" ng-show="processing">
             <div class="col s12 center">
-                <spinner name="booksSpinner">
-                    <h6>Uploading...</h6>
+
+                    <h6>Processing...</h6>
                     <br>
                     <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66"
                          xmlns="http://www.w3.org/2000/svg">
                         <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33"
                                 r="30"></circle>
                     </svg>
-                    <!--<img src="img/spinner3.gif">-->
-                </spinner>
+
+
             </div>
         </div>
 
