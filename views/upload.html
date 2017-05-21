@@ -1,17 +1,33 @@
 <div id="main" class="wrapper valign-wrapper">
 
+
     <!--Main-->
     <div ng-hide="processing" class="container">
+
         <!--Logo-->
         <div class="row">
             <div class="col center s12">
-                <h1>SenSiMet</h1>
+                <h1 class="white-text title">SENSIMET</h1>
             </div>
         </div>
 
         <!--Buttons-->
         <div class="valign">
-            <div class="row" id="uploadButtons">
+                <div class="col s12 center">
+                    <a class="btn waves-effect waves-light teal accent-4" data-target="processModal"> Try it out </a>
+                    <a class="btn waves-effect waves-light grey" data-target="uploadModal"> Upload new file </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--Type sentences form-->
+    <div id="processModal" class="modal">
+
+        <div class="modal-content">
+            <h5>Upload new file</h5>
+            <div class="row" ng-hide="loading">
                 <div class="row">
                     <div class="input-field col s12">
                         <input id="s1" type="text" ng-model="s1">
@@ -22,16 +38,29 @@
                         <label for="s2">Sentence 2</label>
                     </div>
                 </div>
+            </div>
+
+            <!--Spinner-->
+            <div class="row">
                 <div class="col s12 center">
-                    <button class="btn-large waves-effect waves-light orange accent-4" data-target="selectModal"
-                            ng-click="submitSentences()">
-                        Process
-                    </button>
-                    <a class="btn-large waves-effect waves-light grey" data-target="uploadModal"> Upload new file </a>
+                    <spinner name="booksSpinner">
+                        <h6>Uploading...</h6>
+                        <br>
+                        <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33"
+                                    r="30"></circle>
+                        </svg>
+                        <!--<img src="img/spinner3.gif">-->
+                    </spinner>
                 </div>
             </div>
+
         </div>
 
+        <div class="modal-footer">
+            <button ng-click="submitSentences()" class="waves-effect waves-green btn-flat">Upload</button>
+        </div>
     </div>
 
     <!--New file form-->

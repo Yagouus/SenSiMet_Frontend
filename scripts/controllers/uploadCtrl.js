@@ -2,6 +2,7 @@ angular.module("project").controller("uploadCtrl", ["$scope", "$http", "$locatio
 
     //Activate modals
     $('.modal').modal();
+    $('.parallax').parallax();
     $scope.loading = false;
 
     //Posts file to server
@@ -34,7 +35,8 @@ angular.module("project").controller("uploadCtrl", ["$scope", "$http", "$locatio
         });
     };
 
-    //Gets all files from server
+    //Gets all files from se
+    // rver
     $scope.getFiles = function () {
         restService.get("http://localhost:8080/", "archivos")
             .then(function (response) {

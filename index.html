@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="project"  ng-controller="indexCtrl" lang="en">
+<html ng-app="project" ng-controller="indexCtrl" lang="en">
 <head>
 
     <base href="">
@@ -47,6 +47,7 @@
     <link rel="stylesheet" href="styles/materialize.css">
     <link rel="stylesheet" href="styles/app.css">
     <link rel="stylesheet" href="styles/spinner.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
 
     <!--Sweet alerts-->
     <script src="node_modules/sweetalert2/dist/sweetalert2.js"></script>
@@ -55,13 +56,48 @@
     <!--Angular Spinners-->
     <script src="node_modules/angular-spinners/dist/angular-spinners.js"></script>
 
+    <!--D3js-->
+    <script src="https://d3js.org/d3.v4.js"></script>
+
 </head>
 <body>
 
 
 
-<!--Body-->
-<div ng-view class="main"></div>
+<div class="parallax-container blur">
+    <!--Include navbar-->
+    <ng-include class="content" src="'views/navbar.html'"></ng-include>
+    <!--Parallax image-->
+    <div class="parallax "><img src="img/lib4.jpg"></div>
+
+    <!--Main div-->
+    <div ng-view ></div>
+
+</div>
+
+
+
+<div class="section white">
+    <div class="row container">
+        <h2 class="header">How to</h2>
+        <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+    </div>
+</div>
+
+<hr>
+
+<div class="section white">
+    <div class="row container">
+        <h2 class="header">How to</h2>
+        <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+    </div>
+</div>
+
+
+
+
+
+
 
 
 </body>
