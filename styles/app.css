@@ -1,32 +1,26 @@
-@media only screen and (min-width: 993px) {
-    .container {
-        width: 80%;
-    }
-}
-.title{
+.title {
     font-family: 'Lato', sans-serif;
-    font-weight:300;
+    font-weight: 300;
 }
 
-.wrapper{
+.wrapper {
     height: 80vh;
 }
 
-.loading{
+.loading {
     height: 100vh;
     width: 100vw;
 }
 
-.sideright{
-    height:100vh;
+.sideright {
+    height: 100vh;
     padding-bottom: 0 !important;
     margin-bottom: 0 !important;
 }
 
 .blur {
-    background-color: rgba(40,45,45,0.6) !important;
+    background-color: rgba(40, 45, 45, 0.6) !important;
 }
-
 
 .parallax-container {
     height: 100vh;
@@ -55,4 +49,12 @@
     left: 0;
     right: 0;
     z-index: 9999;
+}
+
+.pinned {
+    background-color: rgba(40, 45, 45, 1) !important;
+}
+
+.pin-top {
+    font-size:2em;
 }

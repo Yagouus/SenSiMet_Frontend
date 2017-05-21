@@ -3,7 +3,11 @@ angular.module("project").controller("uploadCtrl", ["$scope", "$http", "$locatio
     //Activate modals
     $('.modal').modal();
     $('.parallax').parallax();
+    $('.target').pushpin({
+        top: 500
+    });
     $scope.loading = false;
+
 
     //Posts file to server
     $scope.submit = function () {

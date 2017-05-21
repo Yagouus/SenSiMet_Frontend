@@ -1,18 +1,50 @@
-<div id="main" class="wrapper valign-wrapper">
+<!--Title div-->
+<div class="parallax-container blur">
 
+    <!--Include navbar-->
+    <!--Navbar-->
+    <!--Navbar-->
+    <div class="navbar-fixed">
+        <nav class="transparent z-depth-0 target " role="navigation">
+            <div class="nav-wrapper container">
+                <!--<a id="logo-container" href="#" class="brand-logo center">SenSiMet</a>-->
 
-    <!--Main-->
-    <div ng-hide="processing" class="container">
+                <!-- <a class="btn-floating btn-large halfway-fab waves-effect waves-light teal" ng-click="isOpen = !isOpen"
+                    href="#/process">
+                     <i class="material-icons">add</i>
+                 </a>-->
 
-        <!--Logo-->
-        <div class="row">
-            <div class="col center s12">
-                <h1 class="white-text title">SENSIMET</h1>
+                <ul id="nav-mobile" class=" right hide-on-med-and-down">
+                    <li><a href="sass.html">Test it! </a></li>
+                    <li><a href="collapsible.html">How to</a></li>
+                    <li><a href="collapsible.html">About</a></li>
+                </ul>
             </div>
-        </div>
+        </nav>
+    </div>
 
-        <!--Buttons-->
-        <div class="valign">
+
+
+
+
+    <!--Parallax image-->
+    <div class="parallax "><img src="img/lib4.jpg"></div>
+
+    <!--Main title-->
+    <div id="main" class="wrapper valign-wrapper">
+
+        <!--Main-->
+        <div ng-hide="processing" class="container">
+
+            <!--Logo-->
+            <div class="row">
+                <div class="col center s12">
+                    <h1 class="white-text title">SENSIMET</h1>
+                </div>
+            </div>
+
+            <!--Buttons-->
+            <div class="valign">
                 <div class="col s12 center">
                     <a class="btn waves-effect waves-light teal accent-4" data-target="processModal"> Try it out </a>
                     <a class="btn waves-effect waves-light grey" data-target="uploadModal"> Upload new file </a>
@@ -22,139 +54,196 @@
 
     </div>
 
-    <!--Type sentences form-->
-    <div id="processModal" class="modal">
+</div>
 
-        <div class="modal-content">
-            <h5>Upload new file</h5>
-            <div class="row" ng-hide="loading">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="s1" type="text" ng-model="s1">
-                        <label for="s1">Sentence 1</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <input id="s2" type="text" ng-model="s2">
-                        <label for="s2">Sentence 2</label>
-                    </div>
-                </div>
-            </div>
+<!--Content divs-->
+<div class="container">
 
-            <!--Spinner-->
-            <div class="row">
-                <div class="col s12 center">
-                    <spinner name="booksSpinner">
-                        <h6>Uploading...</h6>
-                        <br>
-                        <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33"
-                                    r="30"></circle>
-                        </svg>
-                        <!--<img src="img/spinner3.gif">-->
-                    </spinner>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="modal-footer">
-            <button ng-click="submitSentences()" class="waves-effect waves-green btn-flat">Upload</button>
+    <!--How to-->
+    <div class="section white">
+        <div class="row container">
+            <h2 class="header">How to</h2>
+            <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this
+                case, is moved at a different speed than the foreground content while scrolling.</p>
         </div>
     </div>
 
-    <!--New file form-->
-    <div id="uploadModal" class="modal">
-        <div class="modal-content">
-            <h5>Upload new file</h5>
-            <div class="row" ng-hide="loading">
-                <div class="input-field col s12">
-                    <div class="file-field input-field">
-                        <div class="btn waves-effect waves-light orange accent-4">
-                            <span>File</span>
-                            <input type="file" name="file" file-model="data.file">
-                        </div>
-                        <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text">
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="divider"></div>
 
-            <!--Spinner-->
-            <div class="row">
-                <div class="col s12 center">
-                    <spinner name="booksSpinner">
-                        <h6>Uploading...</h6>
-                        <br>
-                        <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33"
-                                    r="30"></circle>
-                        </svg>
-                        <!--<img src="img/spinner3.gif">-->
-                    </spinner>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal-footer">
-            <button ng-click="submit()" class="waves-effect waves-green btn-flat">Upload</button>
-        </div>
-    </div>
-
-    <!--Choose file form-->
-    <div id="selectModal" class="modal">
-        <div class="modal-content">
-            <h5>Select a file</h5>
-            <div class="row">
-                <div ng-repeat="file in files" class="col s12">
-                    <a href="!#" data-target="filterModal" ng-click="getHeaders(file)">{{file}}</a>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-            </div>
-        </div>
-    </div>
-
-    <!--Select headers form-->
-    <div id="filterModal" class="modal">
-        <div class="modal-content">
-            <h5>Select columns</h5>
-            <div class="row">
-                <p>Please, select the columns you want use</p>
-                <form action="#" col="col s12">
-                    <p ng-repeat="header in headers">
-                        <input type="checkbox" id="{{header}}" value="{{header}}" ng-click="selectFunc(header)"/>
-                        <label for="{{header}}">{{header}}</label>
-                    </p>
-                </form>
-            </div>
-
-
-            <div class="modal-footer">
-                <button ng-click="postHeaders()" class="waves-effect waves-green btn-flat">Agree</button>
-            </div>
-        </div>
-    </div>
-
-    <!--Spinner-->
-    <div class="row" ng-show="processing">
-        <div class="col s12 center">
-            <spinner name="processSpinner">
-                <br><br>
-                <h6>Processing file, please be patient</h6>
-                <br>
-                <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66"
-                     xmlns="http://www.w3.org/2000/svg">
-                    <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33"
-                            r="30"></circle>
-                </svg>
-                <!--<img src="img/spinner3.gif">-->
-            </spinner>
+    <!--How to-->
+    <div class="section white">
+        <div class="row container">
+            <h2 class="header">How to</h2>
+            <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this
+                case, is moved at a different speed than the foreground content while scrolling.</p>
         </div>
     </div>
 
 </div>
+
+<!--Footer-->
+<footer class="page-footer blue-grey darken-2">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer
+                    content.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+    </div>
+</footer>
+
+<!--Modals-->
+<!--Type sentences form-->
+<div id="processModal" class="modal">
+
+    <div class="modal-content">
+        <h5>Upload new file</h5>
+        <div class="row" ng-hide="loading">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="s1" type="text" ng-model="s1">
+                    <label for="s1">Sentence 1</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="s2" type="text" ng-model="s2">
+                    <label for="s2">Sentence 2</label>
+                </div>
+            </div>
+        </div>
+
+        <!--Spinner-->
+        <div class="row">
+            <div class="col s12 center">
+                <spinner name="booksSpinner">
+                    <h6>Uploading...</h6>
+                    <br>
+                    <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33"
+                                r="30"></circle>
+                    </svg>
+                    <!--<img src="img/spinner3.gif">-->
+                </spinner>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="modal-footer">
+        <button ng-click="submitSentences()" class="waves-effect waves-green btn-flat">Upload</button>
+    </div>
+</div>
+<!--New file form-->
+<div id="uploadModal" class="modal">
+    <div class="modal-content">
+        <h5>Upload new file</h5>
+        <div class="row" ng-hide="loading">
+            <div class="input-field col s12">
+                <div class="file-field input-field">
+                    <div class="btn waves-effect waves-light orange accent-4">
+                        <span>File</span>
+                        <input type="file" name="file" file-model="data.file">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Spinner-->
+        <div class="row">
+            <div class="col s12 center">
+                <spinner name="booksSpinner">
+                    <h6>Uploading...</h6>
+                    <br>
+                    <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33"
+                                r="30"></circle>
+                    </svg>
+                    <!--<img src="img/spinner3.gif">-->
+                </spinner>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button ng-click="submit()" class="waves-effect waves-green btn-flat">Upload</button>
+    </div>
+</div>
+<!--Choose file form-->
+<div id="selectModal" class="modal">
+    <div class="modal-content">
+        <h5>Select a file</h5>
+        <div class="row">
+            <div ng-repeat="file in files" class="col s12">
+                <a href="!#" data-target="filterModal" ng-click="getHeaders(file)">{{file}}</a>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+    </div>
+</div>
+<!--Select headers form-->
+<div id="filterModal" class="modal">
+    <div class="modal-content">
+        <h5>Select columns</h5>
+        <div class="row">
+            <p>Please, select the columns you want use</p>
+            <form action="#" col="col s12">
+                <p ng-repeat="header in headers">
+                    <input type="checkbox" id="{{header}}" value="{{header}}" ng-click="selectFunc(header)"/>
+                    <label for="{{header}}">{{header}}</label>
+                </p>
+            </form>
+        </div>
+
+
+        <div class="modal-footer">
+            <button ng-click="postHeaders()" class="waves-effect waves-green btn-flat">Agree</button>
+        </div>
+    </div>
+</div>
+<!--Spinner-->
+<div class="row" ng-show="processing">
+    <div class="col s12 center">
+        <spinner name="processSpinner">
+            <br><br>
+            <h6>Processing file, please be patient</h6>
+            <br>
+            <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66"
+                 xmlns="http://www.w3.org/2000/svg">
+                <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33"
+                        r="30"></circle>
+            </svg>
+            <!--<img src="img/spinner3.gif">-->
+        </spinner>
+    </div>
+</div>
+
+
+
+
+
+
+
 
