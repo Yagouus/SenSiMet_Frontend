@@ -11,7 +11,7 @@ angular.module("project").config(["$routeProvider", function ($routeProvider) {
         })
         .when("/process", {
             controller: "processCtrl",
-            templateUrl: "views/logCreation.html"
+            templateUrl: "views/results.html"
         })
         .otherwise("/upload");
 }]);

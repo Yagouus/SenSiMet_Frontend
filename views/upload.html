@@ -1,34 +1,9 @@
-<!--Mobile nav-->
-<ul class="side-nav white" id="mobile-demo">
-    <li><a href="sass.html">Test it! </a></li>
-    <li><a href="collapsible.html">How to</a></li>
-    <li><a href="collapsible.html">About</a></li>
-</ul>
 
 <!--Title div-->
 <div class="parallax-container blur">
 
     <!--Include navbar-->
-    <!--Navbar-->
-    <div class="navbar-fixed">
-        <nav class="transparent z-depth-0 target " role="navigation">
-            <div class="nav-wrapper container">
-                <!--<a id="logo-container" href="#" class="brand-logo center">SenSiMet</a>-->
-
-                <!-- <a class="btn-floating btn-large halfway-fab waves-effect waves-light teal" ng-click="isOpen = !isOpen"
-                    href="#/process">
-                     <i class="material-icons">add</i>
-                 </a>-->
-                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                <ul id="nav-mobile" class=" right hide-on-med-and-down">
-                    <li><a href="sass.html">Test it! </a></li>
-                    <li><a href="collapsible.html">How to</a></li>
-                    <li><a href="collapsible.html">About</a></li>
-                </ul>
-
-            </div>
-        </nav>
-    </div>
+    <ng-include src="'views/navbar.html'"></ng-include>
 
     <!--Parallax image-->
     <div class="parallax "><img src="img/lib4.jpg"></div>

@@ -1,17 +1,10 @@
 angular.module("project").controller("uploadCtrl", ["$scope", "$http", "$location", 'restService', 'postService', 'spinnerService', function ($scope, $http, $location, restService, postService, spinnerService) {
 
     //Activate modals
-    $(".button-collapse").sideNav();
+
     $('.modal').modal();
     $('.parallax').parallax();
-    $('.target').pushpin({
-        top: $(window).height() - 80
-    });
-    $(window).resize(function () {
-        $('.target').pushpin({
-            top: $(window).height() - 80
-        });
-    });
+
     $scope.loading = false;
 
     //Posts file to server
