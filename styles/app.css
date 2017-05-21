@@ -2,6 +2,11 @@
     font-family: 'Lato', sans-serif;
     font-weight: 300;
 }
+.subtitle{
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 1.3em;
+}
 
 .wrapper {
     height: 80vh;
