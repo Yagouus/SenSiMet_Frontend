@@ -4,7 +4,6 @@ angular.module("project").service("restService", ["$http", function($http){
         return $http.get(url + service);
     };
 
-    this.uniques = '';
-    this.file = '';
+
 
 }]);

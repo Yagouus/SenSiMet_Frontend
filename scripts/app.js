@@ -9,7 +9,7 @@ angular.module("project").config(["$routeProvider", function ($routeProvider) {
             controller: "uploadCtrl",
             templateUrl: "views/upload.html"
         })
-        .when("/process", {
+        .when("/result", {
             controller: "processCtrl",
             templateUrl: "views/results.html"
         })

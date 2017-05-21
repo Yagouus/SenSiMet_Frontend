@@ -1,70 +1,35 @@
 angular.module("project").controller("uploadCtrl", ["$scope", "$http", "$location", 'restService', 'postService', 'spinnerService', function ($scope, $http, $location, restService, postService, spinnerService) {
 
-    //Activate modals
-
+    //Materialize
     $('.modal').modal();
     $('.parallax').parallax();
 
     $scope.loading = false;
 
-    //Posts file to server
-    $scope.submit = function () {
-
-        //Show spinner
-        spinnerService.show('booksSpinner');
-        $scope.loading = true;
-
-        var uploadUrl = 'http://localhost:8080/fileUpload';
-        postService.post(uploadUrl, $scope.data.file)
-            .then(function success(response) {
-                swal('Done!', 'Your file was uploaded!', 'success')
-                    .then(function () {
-                        //Open files modal
-                        $('#selectModal').modal('open');
-                        $scope.getFiles();
-                    });
-
-            }, function error(response) {
-                swal('Dang!', 'An error ocurred :(', 'error');
-
-            }).finally(function () {
-
-            //Close modal
-            $('#uploadModal').modal('close');
-            $scope.loading = false;
-            spinnerService.hide('booksSpinner');
-
-        });
-    };
-
-    //Gets all files from server
-    $scope.getFiles = function () {
-        restService.get("http://localhost:8080/", "archivos")
-            .then(function (response) {
-                $scope.files = response.data;
-            });
-    };
-
-    //Posts headers to server
+    //Posts sentences to server
     $scope.submitSentences = function () {
 
-        //Show spinner //Hide title //Close modal
+        //Show spinner and hide input
         $scope.processing = true;
-        $('#filterModal').modal('close');
 
-        var uploadUrl = 'http://localhost:8080/Process';
+        //Call service to post data
+        postService.postData('http://localhost:8080/Process', $scope.s1, $scope.s2)
 
-        postService.postData(uploadUrl, $scope.s1, $scope.s2)
+        //If everything goes right
             .then(function success(response) {
-                restService.uniques = response.data;
-                restService.file = $scope.File;
-                $location.path('/process');
+                postService.data = response.data;               //Pass data to service
+                $location.path('/result');                      //Change view to result
+
+                //If an error happens
             }, function error(response) {
-                swal('Dang!', 'An error ocurred :(', 'error');
+                swal('Dang!', 'An error ocurred :(', 'error');  //Notify error
+
+                //Finally
             }).finally(function () {
-            spinnerService.hide('processSpinner');
-            $scope.processing = false;
+            $('#processModal').modal('close');                   //Close modal
+            $scope.processing = false;                           //Hide spinner enable input
         });
     };
+
 
 }]);
