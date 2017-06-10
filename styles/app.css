@@ -62,3 +62,8 @@
 .pin-top {
     font-size:2em;
 }
+
+#mynetwork {
+    width: 100vw;
+    height: 600px;
+}
