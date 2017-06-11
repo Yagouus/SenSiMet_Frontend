@@ -67,3 +67,11 @@
     width: 100vw;
     height: 600px;
 }
+
+.resultModal{
+    height:60vh;
+}
+
+iframe{
+    height: 58vh;
+}

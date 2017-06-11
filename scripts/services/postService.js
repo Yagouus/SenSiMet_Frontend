@@ -31,6 +31,8 @@ angular.module("project").service("postService", ["$http", function($http){
         return $http.post(uploadUrl, fd, config)
     };
 
+
+
     this.data = '';
 
 }]);
