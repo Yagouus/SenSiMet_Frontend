@@ -1,6 +1,6 @@
 <!--Navbar-->
 <div class="navbar-fixed" ng-controller="navbarCtrl">
-    <nav class="transparent z-depth-0 target " ng-class="{teal: route('/result')}" role="navigation"> <div class="nav-wrapper container">
+    <nav class="z-depth-0 target " ng-class="route('/result') ? 'teal' : 'transparent'" role="navigation"> <div class="nav-wrapper container">
             <!--<a id="logo-container" href="#" class="brand-logo center">SenSiMet</a>-->
 
             <!-- <a class="btn-floating btn-large halfway-fab waves-effect waves-light teal" ng-click="isOpen = !isOpen"
