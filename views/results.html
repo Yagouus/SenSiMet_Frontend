@@ -1,11 +1,49 @@
+
+<!--Include navbar-->
+<div ng-include="'views/navbar.html'"></div>
+
 <!--Tree-->
-<div id="mynetwork"></div>
+<div class="container">
 
-<!--Edit node modal-->
-<div id="editModal" class="modal resultModal">
-
+    <!--General Info-->
     <div class="row">
-        <iframe frameborder="0" src={{link}} class="col s12">
-        </iframe>
+        <div class="col s12 ">
+            <div class="card hoverable ">
+                <div class="card-content">
+
+                    <!--Title-->
+                    <span class="card-title">Result</span>
+
+                    <!--S1-->
+                    <div class="row">
+                        <div class="col s12">
+                            <b>Sentence 1: </b> {{s1.string}}
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <!--Net-->
+    <div class="row">
+        <div class="col s12 ">
+            <div class="card hoverable ">
+                <div class="card-content white-text">
+                    <div id="mynetwork"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--Edit node modal-->
+        <div id="editModal" class="modal resultModal">
+
+            <div class="row">
+                <iframe frameborder="0" src={{link}} class="col s12">
+                </iframe>
+            </div>
+        </div>
     </div>
-</div>

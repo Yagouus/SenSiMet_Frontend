@@ -1,4 +1,4 @@
-angular.module("project").controller("navbarCtrl", ["$scope", "$http", 'restService', 'postService', 'spinnerService', function ($scope, $http, restService, postService, spinnerService) {
+angular.module("project").controller("navbarCtrl", ["$scope", "$http", '$location', 'restService', 'postService', 'spinnerService', function ($scope, $http, $location, restService, postService, spinnerService) {
     $('.target').pushpin({
         top: $(window).height() - 80
     });
@@ -8,4 +8,11 @@ angular.module("project").controller("navbarCtrl", ["$scope", "$http", 'restServ
         });
     });
     $(".button-collapse").sideNav();
+
+    $scope.route = function (route) {
+        return route === $location.path();
+
+    }
+
+
 }]);
