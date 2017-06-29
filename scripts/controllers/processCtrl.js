@@ -8,7 +8,6 @@ angular.module("project").controller("processCtrl", ["$scope", "$http", 'restSer
     $scope.data = postService.data;
 
     console.log($scope.data);
-    console.log($scope.data.relationsArrayList);
 
 
     //Create a network
@@ -42,7 +41,7 @@ angular.module("project").controller("processCtrl", ["$scope", "$http", 'restSer
     }
     for (var i = 0; i < $scope.data.s2.terms.length; i++) {
         $scope.nodes.add({
-            'id': $scope.data.s1.terms[i].string + 's2',
+            'id': $scope.data.s2.terms[i].string + 's2',
             'label': $scope.data.s2.terms[i].string,
             'item': $scope.data.s2.terms[i],
             'level': 1
@@ -54,8 +53,8 @@ angular.module("project").controller("processCtrl", ["$scope", "$http", 'restSer
 
     //Create relations
     for(var i = 0; i < $scope.data.relationsArrayList.length; i++){
-        console.log($scope.data.relationsArrayList[i].t1.string + 's1');
-        console.log($scope.data.relationsArrayList[i].t2.string + 's2');
+        //console.log($scope.data.relationsArrayList[i].t1.string + 's1');
+        //console.log($scope.data.relationsArrayList[i].t2.string + 's2');
         $scope.edges.add({from: $scope.data.relationsArrayList[i].t1.string + 's1', to: $scope.data.relationsArrayList[i].t2.string + 's2'});
         console.log($scope.edges);
     }
