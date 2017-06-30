@@ -7,6 +7,7 @@ angular.module("project").controller("processCtrl", ["$scope", "$http", 'restSer
     //Get data from service
     $scope.data = postService.data;
     $scope.s1 = postService.data.s1;
+    $scope.s2 = postService.data.s2;
 
     console.log($scope.data);
 
