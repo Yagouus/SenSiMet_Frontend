@@ -13,7 +13,7 @@ angular.module("project").controller("uploadCtrl", ["$scope", "$http", "$locatio
         $scope.processing = true;
 
         //Call service to post data
-        postService.postData('http://localhost:8080/Process', $scope.s1, $scope.s2)
+        postService.getData('http://localhost:8080/process', $scope.s1, $scope.s2)
 
         //If everything goes right
             .then(function success(response) {
