@@ -1,9 +1,9 @@
-angular.module("project").service("postService", ["$http", function($http){
+angular.module("project").service("postService", ["$http", function ($http) {
 
-    this.post = function(uploadUrl, data){
+    this.post = function (uploadUrl, data) {
 
         var config = {
-            headers : {
+            headers: {
                 'Content-Type': undefined
             },
             transformRequest: angular.identity
@@ -15,10 +15,10 @@ angular.module("project").service("postService", ["$http", function($http){
         return $http.post(uploadUrl, fd, config)
     };
 
-     this.postData = function(uploadUrl, s1, s2){
+    this.postData = function (uploadUrl, s1, s2) {
 
         var config = {
-            headers : {
+            headers: {
                 'Content-Type': undefined
             },
             transformRequest: angular.identity
@@ -31,10 +31,10 @@ angular.module("project").service("postService", ["$http", function($http){
         return $http.post(uploadUrl, fd, config)
     };
 
-    this.getData = function(uploadUrl, s1, s2){
+    this.getData = function (uploadUrl, s1, s2) {
 
         var config = {
-            headers : {
+            headers: {
                 'Content-Type': undefined
             },
             transformRequest: angular.identity
@@ -43,7 +43,6 @@ angular.module("project").service("postService", ["$http", function($http){
 
         return $http.get(uploadUrl + "?s1=" + s1 + "&s2=" + s2);
     };
-
 
 
     this.data = '';

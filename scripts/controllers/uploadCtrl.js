@@ -31,5 +31,34 @@ angular.module("project").controller("uploadCtrl", ["$scope", "$http", "$locatio
         });
     };
 
+    //Post file with sentences
+    $scope.submitFile = function () {
+
+        //Show spinner
+        spinnerService.show('booksSpinner');
+        $scope.loading = true;
+
+        var uploadUrl = 'http://localhost:8080/processFile';
+        postService.post(uploadUrl, $scope.data.file)
+            .then(function success(response) {
+                swal('Done!', 'Your file was uploaded!', 'success')
+                    .then(function () {
+                        postService.data = response.data;               //Pass data to service
+                        $location.path('/result');                      //Change view to result
+                    });
+
+            }, function error(response) {
+                swal('Dang!', 'An error ocurred :(', 'error');
+
+            }).finally(function () {
+
+            //Close modal
+            $('#uploadModal').modal('close');
+            $scope.loading = false;
+            spinnerService.hide('booksSpinner');
+
+        });
+    };
+
 
 }]);
