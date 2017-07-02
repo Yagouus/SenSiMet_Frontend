@@ -22,7 +22,7 @@ angular.module("project").controller("uploadCtrl", ["$scope", "$http", "$locatio
 
                 //If an error happens
             }, function error(response) {
-                swal('Dang!', 'An error ocurred :(', 'error');  //Notify error
+                swal('Error!', 'An error ocurred :(', 'error');  //Notify error
 
                 //Finally
             }).finally(function () {
@@ -48,7 +48,7 @@ angular.module("project").controller("uploadCtrl", ["$scope", "$http", "$locatio
                     });
 
             }, function error(response) {
-                swal('Dang!', 'An error ocurred :(', 'error');
+                swal('Error!', 'An error ocurred :(', 'error');
 
             }).finally(function () {
 

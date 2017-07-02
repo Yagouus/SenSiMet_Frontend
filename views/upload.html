@@ -123,15 +123,15 @@
             </div>
             <div class="modal-footer">
 
-                    <button class="right btn-flat waves modal-close" data-target="uploadModal">Or upload a file with
-                        your sentences
-                    </button>
-                    <button ng-click="submitSentences()"
-                            class="white-text waves-effect waves-light btn-flat left teal accent-4">Process sentences
-                    </button>
+                <button class="right btn-flat waves modal-close" data-target="uploadModal">Or upload a file with
+                    your sentences
+                </button>
+                <button ng-click="submitSentences()"
+                        class="white-text waves-effect waves-light btn-flat left teal accent-4">Process sentences <i
+                        class="material-icons right">send</i>
+                </button>
 
             </div>
-
         </div>
 
         <!--Spinner-->
@@ -158,17 +158,26 @@
 <div id="uploadModal" class="modal">
     <div class="modal-content">
         <h5>Upload new file</h5>
+        <br>
         <div class="row" ng-hide="loading">
-            <div class="input-field col s12">
-                <div class="file-field input-field">
-                    <div class="btn waves-effect waves-light ">
-                        <span>Choose file</span>
-                        <input type="file" name="file" file-model="data.file">
-                    </div>
-                    <div class="file-path-wrapper">
-                        <input class="file-path" type="text">
+            <div class="row">
+                <div class="col s12">
+                    <div class="input-field col s12">
+                        <div class="file-field input-field">
+                            <div class="btn waves-effect waves-light ">
+                                <span>Choose file <i class="material-icons right">attach_file</i> </span>
+                                <input type="file" name="file" file-model="data.file">
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path" type="text">
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
+            <div class="modal-footer">
+                <button ng-click="submitFile()" class="waves-effect waves btn teal">Upload <i
+                        class="material-icons right">file_upload</i></button>
             </div>
         </div>
 
@@ -188,13 +197,7 @@
             </div>
         </div>
 
-        <div class="modal-footer">
-            <button ng-click="submitFile()" class="waves-effect waves btn teal">Upload</button>
-        </div>
-
     </div>
-
-
 </div>
 
 
