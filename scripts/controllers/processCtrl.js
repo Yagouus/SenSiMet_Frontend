@@ -52,34 +52,44 @@ angular.module("project").controller("processCtrl", ["$scope", "$http", 'restSer
     }
 
 
-
     //Create relations
-    for(var i = 0; i < $scope.data.relationsArrayList.length; i++){
-        //console.log($scope.data.relationsArrayList[i].t1.string + 's1');
-        //console.log($scope.data.relationsArrayList[i].t2.string + 's2');
-        $scope.edges.add({from: $scope.data.relationsArrayList[i].t1.string + 's1', to: $scope.data.relationsArrayList[i].t2.string + 's2'});
+    for (var i = 0; i < $scope.data.relationsArrayList.length; i++) {
+        $scope.edges.add({
+            from: $scope.data.relationsArrayList[i].t1.string + 's1',
+            to: $scope.data.relationsArrayList[i].t2.string + 's2',
+            relation: $scope.data.relationsArrayList[i]
+        });
         console.log($scope.edges);
     }
 
     //On node click
     $scope.network.on('click', function (properties) {
-        var ids = properties.nodes;
-        $scope.selectedNode = ids[0];
-        console.log($scope.nodes.get($scope.selectedNode));
-        //console.log($scope.nodes.get($scope.selectedNode).item);
-        //$scope.link = $sce.trustAsResourceUrl("http://babelnet.org/synset?word=" + $scope.nodes.get($scope.selectedNode).item.bfy.babelSynsetID + "&lang=EN");
-        /*restService.getSynsetWithID($scope.nodes.get($scope.selectedNode).item.bfy.babelSynsetID)
+        //Click on edge
+        if (properties.nodes.length == 0) {
+            var ids = properties.edges;
+            console.log($scope.edges.get(ids[0]));
+            $scope.relation = $scope.edges.get(ids[0]);
+            $scope.node1 = $scope.nodes.get($scope.relation.from);
+            $scope.node2 = $scope.nodes.get($scope.relation.to);
+            $('#viewRelation').modal('open');
+        } else {
+            console.log(properties);
+            var ids = properties.nodes;
+            $scope.selectedNode = ids[0];
+            console.log($scope.nodes.get($scope.selectedNode));
+            //console.log($scope.nodes.get($scope.selectedNode).item);
+            $scope.link = $sce.trustAsResourceUrl("http://babelnet.org/synset?word=" + $scope.nodes.get($scope.selectedNode).item.bfy.babelSynsetID + "&lang=EN");
+            restService.getSynsetWithID($scope.nodes.get($scope.selectedNode).item.bfy.babelSynsetID)
 
-        //If everything goes right
-            .then(function success(response) {
-                $scope.synset = response.data;
+             //If everything goes right
+             .then(function success(response) {
+             $scope.synset = response.data;
 
-            }, function error(response) {
-                swal('Dang!', 'An error ocurred :(', 'error');
-            });*/
-
-        $('#editModal').modal('open');
-
+             }, function error(response) {
+             swal('Dang!', 'An error ocurred :(', 'error');
+             });
+            $('#editModal').modal('open');
+        }
     });
 
 
