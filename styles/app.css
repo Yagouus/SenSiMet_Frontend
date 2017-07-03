@@ -75,3 +75,11 @@
 iframe{
     height: 58vh;
 }
+
+.text-big{
+    font-size:1.2em;
+}
+
+.text-small{
+    font-size: 0.8em;
+}

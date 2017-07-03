@@ -21,7 +21,10 @@
                     <p class="subtitle white-text">
                         Sentence Similarity Metrics with Babelnet
                     </p>
-                    <p class="white-text">---------------</p>
+                    <div class="col s4 offset-s4 center">
+                        <div class="divider"></div>
+                    </div>
+
                 </div>
             </div>
 
@@ -41,64 +44,142 @@
 <!--Content divs-->
 <div class="container">
 
-    <!--How to-->
+    <!--About-->
     <div class="section white">
-        <div class="row container">
-            <h2 class="header">How to</h2>
-            <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in
-                this
-                case, is moved at a different speed than the foreground content while scrolling.</p>
+        <div class="row">
+            <div class="col s8 offset-s2">
+
+                <h3 class="header center">About</h3>
+
+                <p class="grey-text text-darken-2 text-big">SenSiMet main goal is to create a software platform able to
+                    estimate the resemblance between two sentences and dynamically generate a graph based on the
+                    relationships between the terms in each sentence. With the use of PLN modules and semantic
+                    information
+                    platforms such as WordNet and BabelNet.
+                </p>
+                <p class="grey-text text-darken-2 text-big">The main objectives of this project are the following: </p>
+
+                <ul class="browser-default grey-text text-darken-2 text-big">
+                    <li>Syntactically analyse sentences with PLN methods to identify the POS and type of each term</li>
+                    <li>Automatically disambiguate each term meaning with Babelfy</li>
+                    <li>Apply similarity metrics between the terms of each sentence</li>
+                    <li>Automatically generate a graph based on the relationships between each sentence terms</li>
+                    <li>Develop a REST API that allows anyone to use the developed methods and metrics</li>
+                    <li>Develop a user-friendly interface with added information to further teach the user</li>
+                </ul>
+            </div>
         </div>
     </div>
+
+    <br>
     <div class="divider"></div>
+    <br>
+    <!--Download-->
+    <div class="section white">
+        <div class="row">
+
+            <h3 class="header center">Download</h3>
+
+            <div class="col s4 offset-s1">
+                <p class="center"><i class="material-icons large">desktop_mac</i></p>
+                <br>
+                <p class="grey-text text-darken-2">In this repository you'll find just a script that will install all
+                    the dependencies and configure all the properties needed to run SenSiMet on your computer. Just
+                    download and execute the script named launch.sh and watch how a new browser window opens magically
+                    (sprinkles and fairies not included).
+                </p>
+                <br>
+                <h6 class="header center grey-text">SENSIMET FOR</h6>
+                <h5 class="header center">Users</h5>
+
+            </div>
+
+            <div class="col s4 offset-s2">
+                <p class="center"><i class="fa fa-github large" aria-hidden="true"></i></p>
+                <br>
+                <p class="grey-text text-darken-2">In this repository you'll find the source code of the REST API with
+                    all the NLP and disambiguation methods as well as all the implemented metrics and results.
+                    Also there, you'll find a link to the frontend repository where the source code of this same webpage
+                    is stored.
+
+                </p>
+                <br>
+                <h6 class="header center grey-text ">SENSIMET FOR</h6>
+                <h5 class="header center">Developers</h5>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+
+            <div class="col s2 offset-s2 center">
+                <a href="https://github.com/Yagouus/SenSiMet" class="btn-flat">Download <i class="material-icons right">file_download</i>
+                </a>
+            </div>
+
+            <div class="col s2 offset-s4 center">
+                <a href="https://github.com/Yagouus/SenSiMet_Backend" class="btn-flat">Download <i
+                        class="material-icons right">file_download</i> </a>
+            </div>
+
+        </div>
+    </div>
+
+    <br>
+    <div class="divider"></div>
+    <br>
 
     <!--How to-->
     <div class="section white">
-        <div class="row container">
-            <h2 class="header">How to</h2>
-            <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in
-                this
-                case, is moved at a different speed than the foreground content while scrolling.</p>
-        </div>
-    </div>
-    <div class="divider"></div>
+        <div class="row text-big">
+            <div class="col s8 offset-s2">
 
-    <!--How to-->
-    <div class="section white">
-        <div class="row container">
-            <h2 class="header">How to</h2>
-            <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in
-                this
-                case, is moved at a different speed than the foreground content while scrolling.</p>
+                <h3 class="header center">How to</h3>
+
+                <p class="grey-text text-darken-2 ">To try SenSiMet you just have to click at the "TRY IT OUT"
+                    button on the header of the page. A modal will appear and prompt you to type two sentences or
+                    rather upload a file containing them.
+                    Once you do this, you just have to click on the button "PROCESS THE SENTENCES" and they will be sent
+                    to the server to process.
+                    While they are processing, a loading spinner will entertain you, and if everything goes well you can
+                    analyse and play with the results in the new window you'll be redirected to.</p>
+            </div>
         </div>
     </div>
 
 </div>
+
+<br>
+<br>
 
 <!--Footer-->
 <footer class="page-footer blue-grey darken-2">
     <div class="container">
         <div class="row">
             <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer
-                    content.</p>
+                <h5 class="white-text">About the author</h5>
+                <p class="grey-text text-lighten-4">SenSiMet was developed by Yago Fontenla Seco in a project supervised
+                    by Prof. Alberto Bugarín Diz and Dr. Martín Pereira Fariña at CiTiUS
+                </p>
             </div>
             <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Links</h5>
                 <ul>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                    <li><a class="grey-text text-lighten-3"
+                           href="https://citius.usc.es/equipo/investigadores-en-formacion/yago-fontenla-seco">CiTIUS</a>
+                    </li>
+                    <li><a class="grey-text text-lighten-3" href="https://github.com/Yagouus">GitHub</a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://twitter.com/Yagouus">Twitter</a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/yagofontenlaseco/">Linkedin</a></li>
+
                 </ul>
             </div>
         </div>
     </div>
     <div class="footer-copyright">
         <div class="container">
-            © 2014 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            © 2017 Yago Fontenla Seco
         </div>
     </div>
 </footer>
@@ -123,11 +204,11 @@
             </div>
             <div class="modal-footer">
 
-                <button class="right btn-flat waves modal-close" data-target="uploadModal">Or upload a file with
+                <button class="left btn-flat waves modal-close" data-target="uploadModal">Or upload a file with
                     your sentences
                 </button>
                 <button ng-click="submitSentences()"
-                        class="white-text waves-effect waves-light btn-flat left teal accent-4">Process sentences <i
+                        class="white-text waves-effect waves-light btn-flat right teal accent-4">Process sentences <i
                         class="material-icons right">send</i>
                 </button>
 
@@ -164,7 +245,7 @@
                 <div class="col s12">
                     <div class="input-field col s12">
                         <div class="file-field input-field">
-                            <div class="btn waves-effect waves-light ">
+                            <div class="btn teal accent-4 waves-effect waves-light ">
                                 <span>Choose file <i class="material-icons right">attach_file</i> </span>
                                 <input type="file" name="file" file-model="data.file">
                             </div>
@@ -176,8 +257,12 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button ng-click="submitFile()" class="waves-effect waves btn teal">Upload <i
-                        class="material-icons right">file_upload</i></button>
+                <button class="left btn-flat waves modal-close" data-target="processModal">Or type two sentences
+                </button>
+                <button ng-click="submitFile()"
+                        class="white-text waves-effect waves-light btn-flat right teal accent-4">Upload <i
+                        class="material-icons right">file_upload</i>
+                </button>
             </div>
         </div>
 
