@@ -38,7 +38,13 @@
             <div class="col s12 ">
                 <div class="card hoverable ">
                     <div class="card-content">
+
+                        <!--Title-->
+                        <span class="card-title">Relations graph</span>
+
+                        <!--Graph-->
                         <div id="mynetwork"></div>
+
                     </div>
                 </div>
             </div>
@@ -58,28 +64,51 @@
 <!--Edit node modal-->
 <div id="viewRelation" class="modal">
 
-    <!--Term 1-->
-    <div class="row">
-        <div class="col s12">
-            <p>{{node1}}</p>
+    <div class="modal-content">
+
+        <!--Titulo-->
+        <h4>Relation</h4>
+
+        <!--Term 1-->
+        <div class="row">
+            <div class="col s12">
+                <h5>Term 1</h5>
+                <blockquote>
+                    <p><b>Term: </b> {{node1.string}}</p>
+                    <p><b>POS: </b>{{node1.POS}}</p>
+                    <p><b>Sense: </b>{{node1.sense}}</p>
+                    <p><b>Meaning: </b>{{node1.gloss}}</p>
+                </blockquote>
+            </div>
         </div>
-    </div>
 
-    <!--Term 2-->
-    <div class="row">
-        <div class="col s12">
-            <p>{{node2}}</p>
+        <!--Term 2-->
+        <div class="row">
+            <div class="col s12">
+                <h5>Term 2</h5>
+                <blockquote>
+                    <p><b>Term: </b> {{node2.string}}</p>
+                    <p><b>POS: </b>{{node2.POS}}</p>
+                    <p><b>Sense: </b>{{node2.sense}}</p>
+                    <p><b>Meaning: </b>{{node2.gloss}}</p>
+                </blockquote>
+            </div>
         </div>
-    </div>
 
-    <!--Term 2-->
-    <div class="row">
-        <div class="col s12">
-            <p>{{relation}}</p>
+        <!--Term 2-->
+        <div class="row">
+            <div class="col s12">
+                <div class="divider"></div>
+                <p><b>Bag of words: </b>{{relation.metric}}</p>
+                <p><b>Path length: </b>{{relation.path}}</p>
+            </div>
         </div>
+
+        {{relation}}
+        {{node1}}
+        {{node2}}
+
     </div>
-
-
 
 
 </div>

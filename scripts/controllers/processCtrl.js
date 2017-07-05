@@ -42,7 +42,7 @@ angular.module("project").controller("processCtrl", ["$scope", "$http", 'restSer
             'label': $scope.data.s1.terms[i].string,
             'item': $scope.data.s1.terms[i],
             'level': 0,
-            'color': '#CD1439'
+            'color': '#B2B2B2'
         });
 
         if ($scope.data.s1.terms[i].pos != null) {
@@ -62,7 +62,7 @@ angular.module("project").controller("processCtrl", ["$scope", "$http", 'restSer
             'label': $scope.data.s2.terms[i].string,
             'item': $scope.data.s2.terms[i],
             'level': 1,
-            'color': '#CD1439'
+            'color': '#B2B2B2'
         });
 
         if ($scope.data.s2.terms[i].pos != null) {
@@ -90,9 +90,11 @@ angular.module("project").controller("processCtrl", ["$scope", "$http", 'restSer
         if (properties.nodes.length == 0) {
             var ids = properties.edges;
             console.log($scope.edges.get(ids[0]));
-            $scope.relation = $scope.edges.get(ids[0]);
-            $scope.node1 = $scope.nodes.get($scope.relation.from);
-            $scope.node2 = $scope.nodes.get($scope.relation.to);
+            console.log($scope.nodes.get($scope.relation.from.item));
+            console.log($scope.node2 = $scope.nodes.get($scope.relation.to.item));
+            $scope.relation = $scope.edges.get(ids[0]).relation;
+            $scope.node1 = $scope.nodes.get($scope.relation.from).item;
+            $scope.node2 = $scope.nodes.get($scope.relation.to).item;
             $('#viewRelation').modal('open');
         } else {
             console.log(properties);
@@ -101,6 +103,7 @@ angular.module("project").controller("processCtrl", ["$scope", "$http", 'restSer
             console.log($scope.nodes.get($scope.selectedNode));
             //console.log($scope.nodes.get($scope.selectedNode).item);
             $scope.link = $sce.trustAsResourceUrl("http://babelnet.org/synset?word=" + $scope.nodes.get($scope.selectedNode).item.bfy.babelSynsetID + "&lang=EN");
+
             restService.getSynsetWithID($scope.nodes.get($scope.selectedNode).item.bfy.babelSynsetID)
 
             //If everything goes right
@@ -110,6 +113,7 @@ angular.module("project").controller("processCtrl", ["$scope", "$http", 'restSer
                 }, function error(response) {
                     swal('Dang!', 'An error ocurred :(', 'error');
                 });
+
             $('#editModal').modal('open');
         }
     });
