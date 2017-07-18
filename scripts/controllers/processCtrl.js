@@ -9,9 +9,6 @@ angular.module("project").controller("processCtrl", ["$scope", "$http", 'restSer
     $scope.s1 = postService.data.s1;
     $scope.s2 = postService.data.s2;
 
-    console.log($scope.data);
-
-
     //Create a network
     $scope.nodeId = 1; //Node id
     $scope.nodes = new vis.DataSet([]); //Create an array with nodes
@@ -55,8 +52,6 @@ angular.module("project").controller("processCtrl", ["$scope", "$http", 'restSer
     }
     for (var i = 0; i < $scope.data.s2.terms.length; i++) {
 
-        console.log($scope.data.s2.terms[i].pos);
-
         $scope.nodes.add({
             'id': $scope.data.s2.terms[i].string + 's2',
             'label': $scope.data.s2.terms[i].string,
@@ -90,11 +85,11 @@ angular.module("project").controller("processCtrl", ["$scope", "$http", 'restSer
         if (properties.nodes.length == 0) {
             var ids = properties.edges;
             console.log($scope.edges.get(ids[0]));
-            console.log($scope.nodes.get($scope.relation.from.item));
-            console.log($scope.node2 = $scope.nodes.get($scope.relation.to.item));
+            console.log($scope.edges.get(ids[0]).relation.t1);
+            console.log($scope.edges.get(ids[0]).relation.t2);
             $scope.relation = $scope.edges.get(ids[0]).relation;
-            $scope.node1 = $scope.nodes.get($scope.relation.from).item;
-            $scope.node2 = $scope.nodes.get($scope.relation.to).item;
+            $scope.node1 = $scope.edges.get(ids[0]).relation.t1;
+            $scope.node2 = $scope.edges.get(ids[0]).relation.t2;
             $('#viewRelation').modal('open');
         } else {
             console.log(properties);
