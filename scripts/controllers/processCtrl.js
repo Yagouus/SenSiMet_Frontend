@@ -76,7 +76,6 @@ angular.module("project").controller("processCtrl", ["$scope", "$http", 'restSer
             to: $scope.data.relationsArrayList[i].t2.string + 's2',
             relation: $scope.data.relationsArrayList[i]
         });
-        console.log($scope.edges);
     }
 
     //On node click
@@ -84,24 +83,24 @@ angular.module("project").controller("processCtrl", ["$scope", "$http", 'restSer
         //Click on edge
         if (properties.nodes.length == 0) {
             var ids = properties.edges;
-            console.log($scope.edges.get(ids[0]));
-            console.log($scope.edges.get(ids[0]).relation.t1);
-            console.log($scope.edges.get(ids[0]).relation.t2);
             $scope.relation = $scope.edges.get(ids[0]).relation;
             $scope.node1 = $scope.edges.get(ids[0]).relation.t1;
             $scope.node2 = $scope.edges.get(ids[0]).relation.t2;
+            $scope.$digest();
+            console.log($scope.relation);
+            console.log($scope.node1);
+            console.log($scope.node2);
             $('#viewRelation').modal('open');
+
         } else {
             console.log(properties);
             var ids = properties.nodes;
             $scope.selectedNode = ids[0];
             console.log($scope.nodes.get($scope.selectedNode));
-            //console.log($scope.nodes.get($scope.selectedNode).item);
+
             $scope.link = $sce.trustAsResourceUrl("http://babelnet.org/synset?word=" + $scope.nodes.get($scope.selectedNode).item.bfy.babelSynsetID + "&lang=EN");
 
             restService.getSynsetWithID($scope.nodes.get($scope.selectedNode).item.bfy.babelSynsetID)
-
-            //If everything goes right
                 .then(function success(response) {
                     $scope.synset = response.data;
 
