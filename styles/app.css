@@ -83,3 +83,8 @@ iframe{
 .text-small{
     font-size: 0.8em;
 }
+
+.cont{
+    height: 100%;
+    width: 100%;
+}
