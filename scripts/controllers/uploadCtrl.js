@@ -13,7 +13,7 @@ angular.module("project").controller("uploadCtrl", ["$scope", "$http", "$locatio
         $scope.processing = true;
 
         //Call service to post data
-        postService.getData('http://localhost:8080/process', $scope.s1, $scope.s2)
+        postService.getData(restService.url, $scope.s1, $scope.s2)
 
         //If everything goes right
             .then(function success(response) {
@@ -38,7 +38,7 @@ angular.module("project").controller("uploadCtrl", ["$scope", "$http", "$locatio
         spinnerService.show('booksSpinner');
         $scope.loading = true;
 
-        var uploadUrl = 'http://localhost:8080/processFile';
+        var uploadUrl = restService.url;
         postService.post(uploadUrl, $scope.data.file)
             .then(function success(response) {
                 swal('Done!', 'Your file was uploaded!', 'success')
