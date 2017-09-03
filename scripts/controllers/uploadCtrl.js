@@ -14,7 +14,6 @@ angular.module("project").controller("uploadCtrl", ["$scope", "$http", "$locatio
 
         //Call service to post data
         postService.getData(restService.url, $scope.s1, $scope.s2)
-
         //If everything goes right
             .then(function success(response) {
                 postService.data = response.data;               //Pass data to service
@@ -38,7 +37,9 @@ angular.module("project").controller("uploadCtrl", ["$scope", "$http", "$locatio
         spinnerService.show('booksSpinner');
         $scope.loading = true;
 
+
         var uploadUrl = restService.url;
+
         postService.post(uploadUrl, $scope.data.file)
             .then(function success(response) {
                 swal('Done!', 'Your file was uploaded!', 'success')
