@@ -9,7 +9,7 @@ angular.module("project").service("restService", ["$http", function($http){
     };
 
     //this.url = 'http://localhost:8080';
-    //this.url = 'http://tec.citius.usc.es/sensimet-backend'
-    this.url = 'http://172.16.244.168:8081'
+    this.url = 'https://tec.citius.usc.es/sensimet-backend'
+    //this.url = 'http://172.16.244.168:8081'
 
 }]);
