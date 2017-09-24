@@ -13,7 +13,7 @@ angular.module("project").controller("uploadCtrl", ["$scope", "$http", "$locatio
         $scope.processing = true;
 
         //Call service to post data
-        postService.getData(restService.url, $scope.s1, $scope.s2)
+        postService.getData(restService.url + "process", $scope.s1, $scope.s2)
         //If everything goes right
             .then(function success(response) {
                 postService.data = response.data;               //Pass data to service
@@ -40,7 +40,7 @@ angular.module("project").controller("uploadCtrl", ["$scope", "$http", "$locatio
 
         var uploadUrl = restService.url;
 
-        postService.post(uploadUrl, $scope.data.file)
+        postService.post(uploadUrl + "processFile", $scope.data.file)
             .then(function success(response) {
                 swal('Done!', 'Your file was uploaded!', 'success')
                     .then(function () {
